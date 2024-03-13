@@ -10,7 +10,7 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('HomeView'),
+          title: const Text('home'),
           centerTitle: true,
         ),
         body: SafeArea(
@@ -19,7 +19,7 @@ class HomeView extends GetView<HomeController> {
               children: [
                 ElevatedButton(
                   onPressed: () => controller.getProducts(),
-                  child: Text("Get "),
+                  child: const Text("Get "),
                 ),
                 Obx(() => ListView.builder(
                       shrinkWrap: true,
@@ -30,11 +30,6 @@ class HomeView extends GetView<HomeController> {
                         return ListTile(
                           title: Text(product.title),
                           subtitle: Text("\$ ${product.price}, ${product.description}"),
-                          // leading: Image.network(
-                          //   product.description,
-                          //   height: 40,
-                          //   width: 40,
-                          // ),
                         );
                       },
                     )),

@@ -11,6 +11,6 @@ class HomeController extends GetxController {
   RxList<Product> products = <Product>[].obs;
 
   void getProducts() async {
-    products.value = await productRepository.getAll();
+    products.value = (await productRepository.getAll()) as List<Product>;
   }
 }
